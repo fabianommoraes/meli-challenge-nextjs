@@ -1,0 +1,8 @@
+@use 'tokens'  
+
+.container
+    width: 100%
+
+@media (min-width: tokens.$layout-breakpoint-medium)
+    .container
+        max-width: tokens.$layout-max-width

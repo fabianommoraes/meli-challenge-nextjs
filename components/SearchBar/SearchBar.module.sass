@@ -1,0 +1,37 @@
+@use 'tokens'  
+
+.searchBar
+    display: flex
+    width: 100%
+
+    input
+        color: tokens.$grayscale-high
+        font-size: tokens.$font-size-medium
+        margin: tokens.$space-zero
+        border-radius: 2px 0 0 2px
+        background-color: tokens.$white-color
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.2)
+        height: 40px
+        width: 100%
+        padding: tokens.$space-zero tokens.$space-medium
+        border: 1.5px solid tokens.$white-color
+        outline: none
+
+        &:focus
+            border: 1.5px solid tokens.$secondary-color
+
+    button
+        display: flex
+        justify-content: center
+        align-items: center
+        border: 0
+        border-radius: 0 2px 2px 0
+        box-shadow: 0 1px 2px 0 rgba(0,0,0,.2)
+        outline: none
+        cursor: pointer
+
+        &:focus
+            border: 1.5px solid tokens.$secondary-color
+
+        img
+            margin: tokens.$space-zero tokens.$space-medium

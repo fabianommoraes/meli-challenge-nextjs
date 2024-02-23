@@ -1,0 +1,33 @@
+@use "tokens"
+
+.breadcrumb
+    width: 100%
+    background-color: tokens.$grayscale-verylow 
+    padding: tokens.$space-medium
+    display: flex
+    justify-content: center 
+    align-items: center
+  
+.grid
+    width: 100%
+    max-width: tokens.$layout-max-width
+
+@media (min-width: tokens.$layout-breakpoint-medium)
+    .grid
+        display: grid
+        grid-template-columns: 1fr 10fr 1fr
+
+.bold 
+  font-weight: bold
+
+.content
+    grid-column: 2
+    font-size: tokens.$font-size-small
+    color: tokens.$grayscale-medium 
+
+    img 
+        margin-right: tokens.$space-medium
+
+
+
+

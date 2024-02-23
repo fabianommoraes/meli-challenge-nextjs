@@ -1,0 +1,27 @@
+@use 'tokens'  
+
+.header
+    width: 100%
+    background-color: tokens.$primary-color 
+    padding: tokens.$space-medium
+    display: flex
+    justify-content: center 
+    align-items: center
+
+.grid
+    width: 100%
+    max-width: tokens.$layout-max-width
+
+.content
+    grid-column: 2
+    display: flex
+    align-items: center
+
+    img 
+        margin-right: tokens.$space-medium
+
+
+@media (min-width: tokens.$layout-breakpoint-medium)
+    .grid
+        display: grid
+        grid-template-columns: 1fr 10fr 1fr
