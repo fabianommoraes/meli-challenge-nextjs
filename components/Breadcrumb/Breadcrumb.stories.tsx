@@ -14,4 +14,15 @@ const story = {
 
 export default story;
 
-export const Primary = () => <Breadcrumb />;
+export const Default = () => (
+  <Breadcrumb
+    categories={[
+      "Categoria1",
+      "Categoria2",
+      "Categoria3",
+      "Categoria4",
+      "Categoria5",
+      "Categoria6 "
+    ]}
+  />
+);

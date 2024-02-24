@@ -3,6 +3,7 @@
 .searchBar
     display: flex
     width: 100%
+    margin-left: tokens.$space-medium
 
     input
         color: tokens.$grayscale-high
@@ -18,7 +19,7 @@
         outline: none
 
         &:focus
-            border: 1.5px solid tokens.$secondary-color
+            border: tokens.$outline-border
 
     button
         display: flex
@@ -31,7 +32,7 @@
         cursor: pointer
 
         &:focus
-            border: 1.5px solid tokens.$secondary-color
+            border: tokens.$outline-border
 
         img
             margin: tokens.$space-zero tokens.$space-medium

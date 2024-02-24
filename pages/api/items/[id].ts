@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -40,10 +42,11 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
 
         return response.status(200).json(itemDetailResponse);
       } catch (error) {
-        return response.status(500).json({ error: "Server Error" });
+        // eslint-disable-next-line
+        return response.status(error.response.status).json(error.response.data);
       }
     } catch (error) {
-      return response.status(500).json({ error: "Server Error" });
+      return response.status(error.response.status).json(error.response.data);
     }
   }
 };

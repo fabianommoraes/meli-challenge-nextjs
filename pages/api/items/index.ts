@@ -36,6 +36,8 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
         `https://api.mercadolibre.com/sites/MLA/search?q=${q}`
       );
 
+      console.log(searchResponse);
+
       const { results, filters } = searchResponse.data;
       const category = filters.find((x: Filter) => x.id === "category");
       const values = category.values.find((x: Value) => x.path_from_root);
@@ -51,12 +53,12 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
           title: item.title,
           price: {
             currency: item.currency_id,
-            amount: amount,
-            decimais: decimals
+            amount: parseInt(amount),
+            decimais: parseInt(decimals)
           },
           picture: item.thumbnail,
           condition: item.condition,
-          freeShipping: item.shipping.free_shipping
+          free_shipping: item.shipping.free_shipping
         };
       });
 

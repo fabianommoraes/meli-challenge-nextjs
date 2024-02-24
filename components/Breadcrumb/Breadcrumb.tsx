@@ -1,26 +1,21 @@
-import Container from "../Container/Container";
 import styles from "./Breadcrumb.module.sass";
+import { BreadcrumbProps } from "./Breadcrumb.types";
 
-const array = [
-  "Eletronica, Audio e Video",
-  "iPod",
-  "Reproductores",
-  "iPod touch",
-  "32 GB"
-];
-
-const Breadcrumb = () => {
+const Breadcrumb = ({ categories }: BreadcrumbProps) => {
   return (
     <div className={styles.breadcrumb}>
       <div className={styles.grid}>
         <div className={styles.content}>
-          {array.map((a, i) => (
-            <>
-              <span className={`${i === array.length - 1 && styles.bold}`}>
-                {a}
+          {categories.map((category, i) => (
+            <span key={category}>
+              <span
+                className={`${styles.focusable} ${i === categories.length - 1 && styles.bold}`}
+                tabIndex={0}
+              >
+                {category}
               </span>
-              {i !== array.length - 1 ? <span>{" > "}</span> : null}
-            </>
+              {i !== categories.length - 1 ? <span>{" > "}</span> : null}
+            </span>
           ))}
         </div>
       </div>

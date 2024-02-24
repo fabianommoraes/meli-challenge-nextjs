@@ -1,0 +1,22 @@
+@use "tokens"
+
+.button 
+  background-color: tokens.$secondary-color
+  padding: tokens.$space-medium tokens.$space-xlarge
+  font-size: tokens.$font-size-medium
+  color: tokens.$white-color
+  outline: none
+  border: transparent
+  border-radius: 4px
+  width: 100%
+  cursor: pointer
+
+  &:focus
+    box-shadow: tokens.$outline-box-shadow
+  &:hover
+    opacity: 0.8
+
+  > div 
+    grid-column: 2
+  
+

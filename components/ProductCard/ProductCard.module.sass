@@ -1,0 +1,58 @@
+@use "tokens"
+
+.productCard 
+  background-color: tokens.$white-color
+  padding: tokens.$space-zero
+  outline: none
+  border: 1.5px solid transparent
+
+  &:focus
+    border: 1.5px solid tokens.$secondary-color
+
+  .productInfo 
+    display: flex
+    flex-direction: row
+
+    > img 
+      margin-right: tokens.$space-medium
+      display: flex
+      border-radius: 4px
+    
+.description 
+  display: flex
+  flex-direction: column
+  font-size: tokens.$font-size-small
+
+.price 
+  display: flex
+  align-items: center
+  margin-top: tokens.$space-medium
+  margin-bottom: tokens.$space-xlarge
+  font-size: tokens.$font-size-medium
+
+  > img 
+    margin: tokens.$space-zero tokens.$space-medium
+    cursor: pointer
+
+.location 
+  font-size: tokens.$font-size-xsmall
+  color: tokens.$grayscale-medium
+  text-align: right
+  margin-top: tokens.$space-large
+
+@media (min-width: tokens.$layout-breakpoint-medium)
+  .productCard
+    display: grid
+    grid-template-columns: 8fr 2fr
+    gap: tokens.$space-large
+    padding: tokens.$space-medium tokens.$space-small
+
+  .location
+    margin-top: tokens.$space-xlarge
+    text-align: left
+
+  .price
+    font-size: tokens.$font-size-large
+
+  .description
+    font-size: tokens.$font-size-medium

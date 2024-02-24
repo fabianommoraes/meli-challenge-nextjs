@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import ProductDetails from "@/components/ProductDetails/ProductDetails";
 import { getProductDetails } from "@/services/items";
@@ -19,26 +19,43 @@ const ProductDetailsPage = ({ productDetails }: ProductDetailsProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const params = context.params as Params;
-  const productDetails = await getProductDetails(params.id);
 
-  return {
-    props: {
-      productDetails: productDetails
-    }
-  };
+  const response = await getProductDetails(params.id);
+
+  if (response.status === 200) {
+    return {
+      props: {
+        productDetails: response.data
+      },
+      revalidate: 60
+    };
+  } else {
+    return {
+      notFound: true
+    };
+  }
 };
 
-// export function getStaticPaths() {
-//   const postFilenames = getPostFiles();
-
-//   const slugs = postFilenames.map((fileName) => fileName.replace(/\.md$/, ""));
-
-//   return {
-//     paths: slugs.map((slug) => ({ params: { slug: slug } })),
-//     fallback: false
-//   };
-// }
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      {
+        params: { id: "MLA1437406762" }
+      },
+      {
+        params: { id: "MLA1349435350" }
+      },
+      {
+        params: { id: "MLA1192717387" }
+      },
+      {
+        params: { id: "MLA1663751738" }
+      }
+    ],
+    fallback: "blocking"
+  };
+};
 
 export default ProductDetailsPage;

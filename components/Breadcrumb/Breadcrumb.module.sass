@@ -23,7 +23,14 @@
 .content
     grid-column: 2
     font-size: tokens.$font-size-small
-    color: tokens.$grayscale-medium 
+    color: tokens.$grayscale-medium
+
+.focusable
+    outline: none
+    border: 1px solid transparent
+
+    &:focus
+        border: tokens.$outline-border
 
     img 
         margin-right: tokens.$space-medium

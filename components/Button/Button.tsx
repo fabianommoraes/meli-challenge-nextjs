@@ -1,7 +1,12 @@
-import styles from "./Button.module.scss";
+import styles from "./Button.module.sass";
+import { ButtonProps } from "./Button.types";
 
-const Button = () => {
-  return <button className={styles.button}>Comprar</button>;
+const Button = ({ onClick }: ButtonProps) => {
+  return (
+    <button onClick={onClick} className={styles.button}>
+      Comprar
+    </button>
+  );
 };
 
 export default Button;

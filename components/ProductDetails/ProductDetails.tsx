@@ -6,21 +6,21 @@ import { ProductDetailsProps } from "./ProductDetails.types";
 const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const description = productDetails.item.description.replace(/\n/g, "<br />");
 
+  const onClickHandler = () => {
+    console.log("comprou!");
+  };
+
   return (
     <div className={styles.productDetails}>
       <div className={styles.grid}>
         <div className={styles.content}>
           <Image
+            className={styles.image}
             src={productDetails.item.picture}
+            alt={productDetails.item.title}
             width={680}
             height={680}
             sizes="100vw"
-            style={{
-              width: "100%",
-              maxWidth: "680px"
-            }}
-            alt={productDetails.item.title}
-            priority
           />
           <div className={styles.details}>
             <div
@@ -35,7 +35,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
                 {productDetails.item.price.decimals}
               </span>
             </div>
-            <Button />
+            <Button onClick={onClickHandler} />
           </div>
         </div>
       </div>

@@ -12,14 +12,24 @@
     width: 100%
     max-width: tokens.$layout-max-width
 
+.link
+    outline: none
+    display: flex
+    justify-content: center 
+    align-items: center
+
+    &:focus
+        box-shadow: tokens.$outline-box-shadow
+
 .content
     grid-column: 2
     display: flex
     align-items: center
 
     img 
-        margin-right: tokens.$space-medium
+        outline: none
 
+        
 
 @media (min-width: tokens.$layout-breakpoint-medium)
     .grid

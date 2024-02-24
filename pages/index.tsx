@@ -10,48 +10,14 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Battle of Monsters</title>
-        <meta name="description" content="Battle of Monsters" />
+        <title>Mercado Libre</title>
+        <meta
+          name="description"
+          content="Comprá productos con Envío Gratis en el día en Mercado Libre Argentina. Encontrá miles de marcas y productos a precios increíbles."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Header />
-
-      <Breadcrumb />
-
-      {/* <ProductDetails /> */}
-
-      {/* <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 10fr 1fr",
-          // gap: "tokens.$space-large",
-          backgroundColor: "#EEEEEE"
-        }}
-      >
-        <div
-          style={{
-            gridColumn: 2,
-            backgroundColor: "white",
-            borderRadius: "2px"
-          }}
-        >
-          {array.map((i) => (
-            <>
-              <ProductCard key={i} />
-              {i !== array.length ? (
-                <hr
-                  style={{
-                    margin: "0 8px",
-                    border: "1px solid #EEEEEE"
-                  }}
-                />
-              ) : null}
-            </>
-          ))}
-        </div>
-      </div> */}
     </>
   );
 }
