@@ -24,9 +24,12 @@ export const getProductDetails = async (id: string) => {
 };
 
 export const getSearchResults = async (
-  query: string | string[] | undefined
+  query: string | string[] | undefined,
+  c: string | string[] | undefined
 ) => {
-  const response = await fetch(`http://localhost:3000/api/items?q=${query}`);
+  const response = await fetch(
+    `http://localhost:3000/api/items?q=${query}&c=${c}`
+  );
   const data = await response.json();
   return {
     status: response.status,

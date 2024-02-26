@@ -12,7 +12,8 @@ const config: StorybookConfig = {
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
     "@storybook/addon-mdx-gfm",
-    'storybook-addon-fetch-mock'
+    'storybook-addon-fetch-mock',
+    '@storybook/addon-viewport'
   ],
   framework: {
     name: "@storybook/nextjs",

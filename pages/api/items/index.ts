@@ -28,7 +28,7 @@ type MLItem = {
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method === "GET") {
     const {
-      query: { q }
+      query: { q, c }
     } = request;
 
     try {
@@ -36,17 +36,39 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
         `https://api.mercadolibre.com/sites/MLA/search?q=${q}`
       );
 
-      console.log(searchResponse);
-
       const { results, filters } = searchResponse.data;
       const category = filters.find((x: Filter) => x.id === "category");
-      const values = category.values.find((x: Value) => x.path_from_root);
-      const categories = values.path_from_root.map((x: Category) => x.name);
+
+      let categories;
+
+      if (category) {
+        const values = category.values.find((x: Value) => x.path_from_root);
+        categories = values.path_from_root.map((x: Category) => x.name);
+      } else {
+        if (c !== "false") {
+          try {
+            const categoriesResponse = await axios.get(
+              `https://api.mercadolibre.com/categories/${results[0].category_id}`
+            );
+            categories = categoriesResponse.data.path_from_root.map(
+              (x: Category) => x.name
+            );
+          } catch (error) {
+            return response.status(500).json({ error: "Server Error" });
+          }
+        }
+      }
 
       const slicedResults = results.slice(0, 4);
 
       const items = slicedResults.map((item: MLItem) => {
         const [amount, decimals] = item.price.toString().split(".");
+
+        const formattedDecimals = Boolean(decimals)
+          ? parseInt(decimals) < 10
+            ? `0${decimals}`
+            : decimals
+          : "00";
 
         return {
           id: item.id,
@@ -54,7 +76,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
           price: {
             currency: item.currency_id,
             amount: parseInt(amount),
-            decimais: parseInt(decimals)
+            decimals: formattedDecimals
           },
           picture: item.thumbnail,
           condition: item.condition,

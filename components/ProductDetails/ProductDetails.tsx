@@ -1,9 +1,12 @@
 import Image from "next/image";
 import styles from "./ProductDetails.module.sass";
-import Button from "@/components/Button/Button";
+import Button from "../Button/Button";
 import { ProductDetailsProps } from "./ProductDetails.types";
 
-const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
+const ProductDetails = ({
+  productDetails,
+  hasCategories
+}: ProductDetailsProps) => {
   const description = productDetails.item.description.replace(/\n/g, "<br />");
 
   const onClickHandler = () => {
@@ -11,7 +14,9 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   };
 
   return (
-    <div className={styles.productDetails}>
+    <div
+      className={`${styles.productDetails} ${!hasCategories ? styles.categories : ""}`}
+    >
       <div className={styles.grid}>
         <div className={styles.content}>
           <Image
@@ -20,10 +25,11 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             alt={productDetails.item.title}
             width={680}
             height={680}
-            sizes="100vw"
+            priority
           />
           <div className={styles.details}>
             <div
+              data-testid={"soldQuantity"}
               className={styles.buyers}
             >{`${productDetails.item.condition} - ${productDetails.item.sold_quantity} vendidos`}</div>
             <h1>{productDetails.item.title}</h1>
@@ -31,11 +37,11 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
               <span className={styles.price}>
                 $ {productDetails.item.price.amount}
               </span>{" "}
-              <span className={styles.decimal}>
+              <span data-testid={"decimals"} className={styles.decimal}>
                 {productDetails.item.price.decimals}
               </span>
             </div>
-            <Button onClick={onClickHandler} />
+            <Button onClick={onClickHandler}>Comprar</Button>
           </div>
         </div>
       </div>

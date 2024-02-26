@@ -1,3 +1,5 @@
+import { Price } from "@/shared/types";
+
 export type ProductCardProps = {
   item: Item;
 };
@@ -5,11 +7,7 @@ export type ProductCardProps = {
 export type Item = {
   id: string;
   title: string;
-  price: {
-    currency: string;
-    amount: number;
-    decimals?: number;
-  };
+  price: Price;
   picture: string;
   condition: string;
   free_shipping: boolean;

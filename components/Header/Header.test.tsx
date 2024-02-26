@@ -3,11 +3,31 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import Header from "./Header";
 
-describe("VictoryMessage tests", () => {
-  it("should render the attribute name and stat bar", () => {
+describe("Header tests", () => {
+  beforeEach(async () => {
+    const useRouter = jest.spyOn(require("next/router"), "useRouter");
+
+    useRouter.mockImplementation(() => ({
+      route: "/"
+    }));
+  });
+
+  it("should render the logo", () => {
     render(<Header />);
 
-    const winner = screen.getByText("Dead Unicorn wins!");
-    expect(winner).toBeInTheDocument();
+    const logo = screen.getByRole("img", { name: "Logo Mercado Libre" });
+
+    expect(logo).toHaveAttribute(
+      "src",
+      "/_next/image?url=%2Flogo_ml.png&w=128&q=75"
+    );
+    expect(logo).toBeInTheDocument();
+  });
+
+  it("should render the search bar", () => {
+    render(<Header />);
+
+    const input = screen.getByRole("textbox", { name: "busca" });
+    expect(input).toBeInTheDocument();
   });
 });

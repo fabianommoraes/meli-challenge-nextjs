@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./Header";
+import Error404 from "./404";
 
 const story = {
-  title: "Components/Header",
-  component: Header,
+  title: "Components/Error404",
+  component: Error404,
   parameters: {
     layout: "centered",
     fetchMock: {
@@ -14,4 +14,4 @@ const story = {
 
 export default story;
 
-export const Default = () => <Header />;
+export const Default = () => <Error404 />;

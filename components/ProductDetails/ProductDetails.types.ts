@@ -1,23 +1,14 @@
-import { ParsedUrlQuery } from "querystring";
+import { Author, Categories, Price } from "@/shared/types";
 
 export type ProductDetailsProps = {
   productDetails: ProductDetails;
+  hasCategories: boolean;
 };
 
 export type ProductDetails = {
   author: Author;
   item: Item;
-};
-
-export type Author = {
-  name: string;
-  lastname: string;
-};
-
-export type Price = {
-  currency: string;
-  amount: number;
-  decimals: number;
+  categories: Categories;
 };
 
 export type Item = {
@@ -30,7 +21,3 @@ export type Item = {
   sold_quantity: number;
   description: string;
 };
-
-export interface Params extends ParsedUrlQuery {
-  id: string;
-}

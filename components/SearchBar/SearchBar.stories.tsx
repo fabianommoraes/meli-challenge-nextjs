@@ -14,4 +14,4 @@ const story = {
 
 export default story;
 
-export const Primary = () => <SearchBar />;
+export const Default = () => <SearchBar />;

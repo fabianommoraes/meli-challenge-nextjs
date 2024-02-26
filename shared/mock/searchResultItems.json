@@ -1,0 +1,50 @@
+[
+  {
+    "id": "MLA903665569",
+    "title": "Sony Playstation 3 Super Slim 500gb Standard  Color Charcoal Black",
+    "price": {
+      "currency": "ARS",
+      "amount": 255612,
+      "decimals": "00"
+    },
+    "picture": "http://http2.mlstatic.com/D_654507-MLA51356082489_082022-I.jpg",
+    "condition": "new",
+    "free_shipping": true
+  },
+  {
+    "id": "MLA1635341552",
+    "title": "Sony Playstation 4 Slim Cuh-20 1tb Standard  Color Negro Azabache",
+    "price": {
+      "currency": "ARS",
+      "amount": 524799,
+      "decimals": "00"
+    },
+    "picture": "http://http2.mlstatic.com/D_798586-MLA40076060236_122019-I.jpg",
+    "condition": "new",
+    "free_shipping": true
+  },
+  {
+    "id": "MLA1678032810",
+    "title": "Sony Playstation 5 825gb Fifa 23 Bundle  Color Blanco Y Negro",
+    "price": {
+      "currency": "ARS",
+      "amount": 1172000,
+      "decimals": "00"
+    },
+    "picture": "http://http2.mlstatic.com/D_903197-MLA52130422147_102022-I.jpg",
+    "condition": "new",
+    "free_shipping": true
+  },
+  {
+    "id": "MLA1554914398",
+    "title": "Sony Playstation 5 825gb God Of War Ragnarok Bundle Color Blanco/negro",
+    "price": {
+      "currency": "ARS",
+      "amount": 1279999,
+      "decimals": "99"
+    },
+    "picture": "http://http2.mlstatic.com/D_700033-MLA69689802995_052023-I.jpg",
+    "condition": "new",
+    "free_shipping": true
+  }
+]

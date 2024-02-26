@@ -18,7 +18,12 @@ const SearchBar = () => {
 
   return (
     <form className={styles.searchBar}>
-      <input placeholder="busca" ref={inputRef} />
+      <input
+        placeholder="busca"
+        ref={inputRef}
+        name="busca"
+        aria-label="busca"
+      />
       <button type="submit" onClick={onClickHandler}>
         <Image src="/ic_search.png" width={18} height={18} alt="buscar" />
       </button>

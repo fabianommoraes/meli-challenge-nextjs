@@ -11,9 +11,10 @@ const Header = () => {
           <Link className={styles.link} href={"/"}>
             <Image
               src="/logo_ml.png"
-              alt="Logo Mercado Livre"
+              alt="Logo Mercado Libre"
               width={53}
               height={36}
+              priority
             />
           </Link>
           <SearchBar />

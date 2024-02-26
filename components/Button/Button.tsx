@@ -1,10 +1,10 @@
 import styles from "./Button.module.sass";
 import { ButtonProps } from "./Button.types";
 
-const Button = ({ onClick }: ButtonProps) => {
+const Button = ({ onClick, children }: ButtonProps) => {
   return (
     <button onClick={onClick} className={styles.button}>
-      Comprar
+      {children}
     </button>
   );
 };

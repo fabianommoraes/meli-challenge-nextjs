@@ -2,19 +2,26 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import ProductDetails from "@/components/ProductDetails/ProductDetails";
 import { getProductDetails } from "@/services/items";
-import {
-  ProductDetailsProps,
-  Params
-} from "@/components/ProductDetails/ProductDetails.types";
+import { ProductDetailsProps } from "@/components/ProductDetails/ProductDetails.types";
+import { Params } from "@/shared/types";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 const ProductDetailsPage = ({ productDetails }: ProductDetailsProps) => {
+  const hasCategories = Boolean(productDetails.categories);
+
   return (
     <>
       <Head>
         <title>{productDetails.item.title}</title>
         <meta name="description" content={productDetails.item.description} />
       </Head>
-      <ProductDetails productDetails={productDetails} />
+      {hasCategories ? (
+        <Breadcrumb categories={productDetails.categories} />
+      ) : null}
+      <ProductDetails
+        productDetails={productDetails}
+        hasCategories={hasCategories}
+      />
     </>
   );
 };

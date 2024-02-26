@@ -14,4 +14,4 @@ const story = {
 
 export default story;
 
-export const Primary = () => <Button />;
+export const Default = () => <Button onClick={() => {}}>Botão Primário</Button>;

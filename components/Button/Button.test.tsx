@@ -1,13 +1,25 @@
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import React from "react";
 import Button from "./Button";
 
-describe("VictoryMessage tests", () => {
-  it("should render the attribute name and stat bar", () => {
-    render(<Button />);
+describe("Button tests", () => {
+  it("should render the correct text", () => {
+    const onClick = jest.fn;
 
-    const winner = screen.getByText("Dead Unicorn wins!");
-    expect(winner).toBeInTheDocument();
+    render(<Button onClick={onClick}>Comprar</Button>);
+
+    const text = screen.getByText("Comprar");
+    expect(text).toBeInTheDocument();
+  });
+
+  it("should call the onclick function", () => {
+    const clickHandler = jest.fn();
+
+    render(<Button onClick={clickHandler}>Comprar</Button>);
+    const button = screen.getByRole("button", { name: "Comprar" });
+
+    button.click();
+    expect(clickHandler).toHaveBeenCalled();
   });
 });

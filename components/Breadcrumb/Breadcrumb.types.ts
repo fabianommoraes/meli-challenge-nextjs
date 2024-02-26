@@ -1,4 +1,4 @@
-import { Categories } from "../SearchResults/SearchResults.types";
+import { Categories } from "@/shared/types";
 
 export type BreadcrumbProps = {
   categories: Categories;

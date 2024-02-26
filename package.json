@@ -13,27 +13,21 @@
     "cypress:open": "cypress open"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.15.0",
-    "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.2",
     "jest-fetch-mock": "^3.0.3",
     "next": "14.0.4",
-    "next-redux-wrapper": "^8.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-redux": "^9.0.4",
-    "reducers": "^3.0.0-alpha",
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.1",
     "@storybook/addon-essentials": "^7.6.5",
     "@storybook/addon-interactions": "^7.6.5",
     "@storybook/addon-links": "^7.6.5",
     "@storybook/addon-mdx-gfm": "^7.6.5",
     "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/addon-viewport": "^7.6.17",
     "@storybook/blocks": "^7.6.5",
     "@storybook/nextjs": "^7.6.5",
     "@storybook/react": "^7.6.5",

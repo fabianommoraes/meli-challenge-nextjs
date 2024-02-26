@@ -2,7 +2,7 @@ import { GetServerSideProps, GetStaticProps, GetStaticPaths } from "next";
 import Head from "next/head";
 import SearchResults from "@/components/SearchResults/SearchResults";
 import { getSearchResults } from "@/services/items";
-import { SearchResultsPageProps } from "@/components/SearchResults/SearchResults.types";
+import { SearchResultsPageProps } from "@/shared/types";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 const SearchResultsPage = ({ searchResults }: SearchResultsPageProps) => {
@@ -12,16 +12,18 @@ const SearchResultsPage = ({ searchResults }: SearchResultsPageProps) => {
         <title>Busca</title>
         <meta name="description" content="Descrição" />
       </Head>
-      <Breadcrumb categories={searchResults.categories} />
-      <SearchResults items={searchResults.items} />
+      {searchResults.categories ? (
+        <Breadcrumb categories={searchResults.categories} />
+      ) : null}
+      <SearchResults searchResultItems={searchResults.items} />
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const search = context.query.search;
+  const { search, c } = context.query;
 
-  const response = await getSearchResults(search);
+  const response = await getSearchResults(search, c);
 
   if (response.status === 200) {
     return {
@@ -35,25 +37,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 };
-
-// export const getStaticPaths = async () => {
-//   return {
-//     paths: [
-//       {
-//         params: { id: "MLA1437406762" }
-//       },
-//       {
-//         params: { id: "MLA1349435350" }
-//       },
-//       {
-//         params: { id: "MLA1192717387" }
-//       },
-//       {
-//         params: { id: "MLA1663751738" }
-//       }
-//     ],
-//     fallback: "blocking"
-//   };
-// };
 
 export default SearchResultsPage;

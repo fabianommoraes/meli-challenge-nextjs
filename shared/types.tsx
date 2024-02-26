@@ -1,14 +1,23 @@
-export type MonsterData = {
-  id: string;
+import { ParsedUrlQuery } from "querystring";
+import { SearchResults } from "@/components/SearchResults/SearchResults.types";
+
+export type Author = {
   name: string;
-  attack: number;
-  defense: number;
-  hp: number;
-  speed: number;
-  type: string;
-  imageUrl: string;
+  lastname: string;
 };
 
-export type ListOfMonstersProps = {
-  arrayOfMonsters: MonsterData[];
+export type Price = {
+  currency: string;
+  amount: number;
+  decimals: string;
 };
+
+export type Categories = string[];
+
+export type SearchResultsPageProps = {
+  searchResults: SearchResults;
+};
+
+export interface Params extends ParsedUrlQuery {
+  id: string;
+}

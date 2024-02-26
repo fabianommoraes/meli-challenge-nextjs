@@ -7,7 +7,7 @@ const Breadcrumb = ({ categories }: BreadcrumbProps) => {
       <div className={styles.grid}>
         <div className={styles.content}>
           {categories.map((category, i) => (
-            <span key={category}>
+            <span key={category} data-testid="breadcrumb">
               <span
                 className={`${styles.focusable} ${i === categories.length - 1 && styles.bold}`}
                 tabIndex={0}

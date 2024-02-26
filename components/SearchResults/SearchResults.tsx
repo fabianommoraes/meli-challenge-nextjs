@@ -2,15 +2,15 @@ import styles from "./SearchResults.module.sass";
 import { SearchResultsProps } from "./SearchResults.types";
 import ProductCard from "../ProductCard/ProductCard";
 
-const SearchResults = ({ items }: SearchResultsProps) => {
+const SearchResults = ({ searchResultItems }: SearchResultsProps) => {
   return (
     <div className={styles.searchResults}>
       <div className={styles.grid}>
         <div className={styles.content}>
-          {items.map((item, i) => (
+          {searchResultItems.map((item, i) => (
             <div key={item.id}>
               <ProductCard item={item} key={item.id} />
-              {i !== items.length - 1 ? <hr /> : null}
+              {i !== searchResultItems.length - 1 ? <hr /> : null}
             </div>
           ))}
         </div>
