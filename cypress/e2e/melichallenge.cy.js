@@ -1,5 +1,7 @@
+import "cypress-real-events";
+
 describe("Mercado Libre busca e compra", () => {
-  it("should load the page then select a monster and request the winner", () => {
+  it("should load the page then search a product and buy it", () => {
     cy.visit("http://localhost:3000/");
 
     cy.get("input").type("playstation").type("{enter}");
@@ -11,6 +13,28 @@ describe("Mercado Libre busca e compra", () => {
     cy.url().should("contain", "/items/MLA1362438311");
 
     cy.get("button").eq(1).click();
+
+    cy.window()
+      .its("console")
+      .then((console) => {
+        cy.spy(console, "log").as("comprou!");
+      });
+  });
+
+  it("should load the page then search a product and buy it with a11y navigation", () => {
+    cy.visit("http://localhost:3000/");
+    cy.get("a").focus();
+    cy.realPress("Tab");
+    cy.realType("playstation{enter}");
+
+    cy.url().should("contain", "/items?search=playstation");
+    cy.realPress("Tab");
+    cy.realPress("Tab");
+    cy.realType("{enter}");
+
+    cy.url().should("contain", "/items/MLA1362438311");
+    cy.realPress("Tab");
+    cy.realType("{enter}");
 
     cy.window()
       .its("console")

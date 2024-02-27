@@ -23,7 +23,9 @@ describe("SearchBar tests", () => {
     render(<SearchBar />);
 
     const button = screen.getByRole("button", { name: "buscar" });
-    const input = screen.getByRole("textbox", { name: "searchInput" });
+    const input = screen.getByRole("textbox", {
+      name: "Digite o que você deseja encontrar"
+    });
     fireEvent.change(input, { target: { value: "playstation" } });
     button.click();
     expect(pushMock).toHaveBeenCalled();

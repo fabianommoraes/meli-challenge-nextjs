@@ -14,7 +14,7 @@ describe("ProductCard tests", () => {
     const price = screen.getByText(/255612/i);
     const decimals = screen.getByTestId("decimals");
     const image = screen.getByAltText(/Sony Playstation 3/i);
-    const freeShipping = screen.getByAltText(/free shipping/i);
+    const freeShipping = screen.getByAltText(/Frete grátis/i);
 
     expect(title).toBeInTheDocument();
     expect(price).toBeInTheDocument();
@@ -30,7 +30,7 @@ describe("ProductCard tests", () => {
     searchResultItem.free_shipping = false;
 
     render(<ProductCard item={searchResultItem} />);
-    const freeShipping = screen.queryByAltText(/free shipping/i);
+    const freeShipping = screen.queryByAltText(/Frete grátis/i);
 
     expect(freeShipping).not.toBeInTheDocument();
   });
