@@ -2,7 +2,6 @@ import { Author, Categories, Price } from "@/shared/types";
 
 export type ProductDetailsProps = {
   productDetails: ProductDetails;
-  hasCategories: boolean;
 };
 
 export type ProductDetails = {

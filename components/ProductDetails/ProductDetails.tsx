@@ -3,10 +3,7 @@ import styles from "./ProductDetails.module.sass";
 import Button from "../Button/Button";
 import { ProductDetailsProps } from "./ProductDetails.types";
 
-const ProductDetails = ({
-  productDetails,
-  hasCategories
-}: ProductDetailsProps) => {
+const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const description = productDetails.item.description.replace(/\n/g, "<br />");
 
   const onClickHandler = () => {
@@ -14,9 +11,7 @@ const ProductDetails = ({
   };
 
   return (
-    <div
-      className={`${styles.productDetails} ${!hasCategories ? styles.categories : ""}`}
-    >
+    <div data-testid="productDetails" className={styles.productDetails}>
       <div className={styles.grid}>
         <div className={styles.content}>
           <Image

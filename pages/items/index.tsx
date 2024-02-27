@@ -12,18 +12,16 @@ const SearchResultsPage = ({ searchResults }: SearchResultsPageProps) => {
         <title>Busca</title>
         <meta name="description" content="Descrição" />
       </Head>
-      {searchResults.categories ? (
-        <Breadcrumb categories={searchResults.categories} />
-      ) : null}
+      <Breadcrumb categories={searchResults.categories} />
       <SearchResults searchResultItems={searchResults.items} />
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { search, c } = context.query;
+  const { search, extraInfo } = context.query;
 
-  const response = await getSearchResults(search, c);
+  const response = await getSearchResults(search, extraInfo);
 
   if (response.status === 200) {
     return {

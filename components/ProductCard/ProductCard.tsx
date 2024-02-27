@@ -11,7 +11,9 @@ const ProductCard = ({ item }: ProductCardProps) => {
         <div>
           <div className={styles.price}>
             <span>$ {item.price.amount}</span>
-            <span className={styles.decimals}>{item.price.decimals}</span>
+            <span data-testid="decimals" className={styles.decimals}>
+              {item.price.decimals}
+            </span>
             {item.free_shipping ? (
               <Image
                 src="/ic_shipping.png"
@@ -25,7 +27,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
         </div>
       </div>
 
-      <div className={styles.location}>{item.id}</div>
+      <div className={styles.location}>{item.state}</div>
     </Link>
   );
 };

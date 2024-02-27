@@ -7,21 +7,14 @@ import { Params } from "@/shared/types";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 const ProductDetailsPage = ({ productDetails }: ProductDetailsProps) => {
-  const hasCategories = Boolean(productDetails.categories);
-
   return (
     <>
       <Head>
         <title>{productDetails.item.title}</title>
         <meta name="description" content={productDetails.item.description} />
       </Head>
-      {hasCategories ? (
-        <Breadcrumb categories={productDetails.categories} />
-      ) : null}
-      <ProductDetails
-        productDetails={productDetails}
-        hasCategories={hasCategories}
-      />
+      <Breadcrumb categories={productDetails.categories} />
+      <ProductDetails productDetails={productDetails} />
     </>
   );
 };

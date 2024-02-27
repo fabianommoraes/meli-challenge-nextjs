@@ -15,4 +15,6 @@ const story = {
 
 export default story;
 
-export const Default = () => <ProductDetails productDetails={idemDetail} />;
+export const WithCategories = () => (
+  <ProductDetails productDetails={idemDetail} />
+);

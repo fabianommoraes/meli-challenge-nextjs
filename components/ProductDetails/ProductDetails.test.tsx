@@ -6,12 +6,7 @@ import idemDetail from "../../shared/mock/itemDetail.json";
 
 describe("ProductDetails tests", () => {
   it("should render the attribute name and stat bar", () => {
-    render(
-      <ProductDetails
-        productDetails={idemDetail}
-        hasCategories={Boolean(idemDetail.categories)}
-      />
-    );
+    render(<ProductDetails productDetails={idemDetail} />);
     const encodedUrl = encodeURIComponent(idemDetail.item.picture);
 
     const title = screen.getByText(/Sony Playstation 5/i);
@@ -32,5 +27,16 @@ describe("ProductDetails tests", () => {
       "src",
       `/_next/image?url=${encodedUrl}&w=1920&q=75`
     );
+  });
+
+  it("should call the Buy button function", () => {
+    console.log = jest.fn();
+
+    render(<ProductDetails productDetails={idemDetail} />);
+
+    const button = screen.getByRole("button", { name: "Comprar" });
+
+    button.click();
+    expect(console.log).toHaveBeenCalledWith("comprou!");
   });
 });

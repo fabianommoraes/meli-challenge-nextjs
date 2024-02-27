@@ -1,20 +1,12 @@
-import { Author, Categories, Price } from "@/shared/types";
+import { Author, Categories } from "@/shared/types";
+import { Item } from "../ProductCard/ProductCard.types";
 
 export type SearchResultsProps = {
-  searchResultItems: ItemSearch[];
+  searchResultItems: Item[];
 };
 
 export type SearchResults = {
   author: Author;
-  items: ItemSearch[];
+  items: Item[];
   categories: Categories;
-};
-
-export type ItemSearch = {
-  id: string;
-  title: string;
-  price: Price;
-  picture: string;
-  condition: string;
-  free_shipping: boolean;
 };

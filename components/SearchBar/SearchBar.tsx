@@ -10,7 +10,7 @@ const SearchBar = () => {
   const onClickHandler = (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
 
-    if (inputRef.current) {
+    if (inputRef.current && inputRef.current.value) {
       const value = inputRef.current.value;
       router.push(`/items?search=${value}`);
     }
@@ -21,8 +21,8 @@ const SearchBar = () => {
       <input
         placeholder="busca"
         ref={inputRef}
-        name="busca"
-        aria-label="busca"
+        name="searchInput"
+        aria-label="searchInput"
       />
       <button type="submit" onClick={onClickHandler}>
         <Image src="/ic_search.png" width={18} height={18} alt="buscar" />

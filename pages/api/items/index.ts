@@ -28,7 +28,7 @@ type MLItem = {
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method === "GET") {
     const {
-      query: { q, c }
+      query: { q, extraInfo }
     } = request;
 
     try {
@@ -45,17 +45,13 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
         const values = category.values.find((x: Value) => x.path_from_root);
         categories = values.path_from_root.map((x: Category) => x.name);
       } else {
-        if (c !== "false") {
-          try {
-            const categoriesResponse = await axios.get(
-              `https://api.mercadolibre.com/categories/${results[0].category_id}`
-            );
-            categories = categoriesResponse.data.path_from_root.map(
-              (x: Category) => x.name
-            );
-          } catch (error) {
-            return response.status(500).json({ error: "Server Error" });
-          }
+        if (extraInfo === "true") {
+          const categoriesResponse = await axios.get(
+            `https://api.mercadolibre.com/categories/${results[0].category_id}`
+          );
+          categories = categoriesResponse.data.path_from_root.map(
+            (x: Category) => x.name
+          );
         }
       }
 
@@ -64,11 +60,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
       const items = slicedResults.map((item: MLItem) => {
         const [amount, decimals] = item.price.toString().split(".");
 
-        const formattedDecimals = Boolean(decimals)
-          ? parseInt(decimals) < 10
-            ? `0${decimals}`
-            : decimals
-          : "00";
+        const formattedDecimals = Boolean(decimals) ? decimals : "00";
 
         return {
           id: item.id,
@@ -83,6 +75,15 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
           free_shipping: item.shipping.free_shipping
         };
       });
+
+      if (extraInfo === "true") {
+        for (const item of items) {
+          const { data: itemResponseData } = await axios.get(
+            `https://api.mercadolibre.com/items/${item.id}`
+          );
+          item.state = itemResponseData.seller_address.state.name;
+        }
+      }
 
       const itemsResponse = {
         author: {

@@ -10,13 +10,15 @@ describe("ProductCard tests", () => {
 
     const encodedUrl = encodeURIComponent(searchResultItem.picture);
 
-    const title = screen.getByText(/Sony Playstation 4 Slim/i);
-    const price = screen.getByText(/540000/i);
-    const image = screen.getByAltText(/Sony Playstation 4 Slim/i);
+    const title = screen.getByText(/Sony Playstation 3/i);
+    const price = screen.getByText(/255612/i);
+    const decimals = screen.getByTestId("decimals");
+    const image = screen.getByAltText(/Sony Playstation 3/i);
     const freeShipping = screen.getByAltText(/free shipping/i);
 
     expect(title).toBeInTheDocument();
     expect(price).toBeInTheDocument();
+    expect(decimals).toBeInTheDocument();
     expect(image).toHaveAttribute(
       "src",
       `/_next/image?url=${encodedUrl}&w=384&q=75`
