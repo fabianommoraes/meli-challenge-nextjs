@@ -48,16 +48,16 @@ export const getStaticPaths = async () => {
     return {
       paths: [
         {
+          params: { id: "MLA1362438311" }
+        },
+        {
           params: { id: "MLA1437406762" }
         },
         {
-          params: { id: "MLA1349435350" }
+          params: { id: "MLA903665569" }
         },
         {
-          params: { id: "MLA1192717387" }
-        },
-        {
-          params: { id: "MLA1663751738" }
+          params: { id: "MLA1130295049" }
         }
       ],
       fallback: "blocking"
