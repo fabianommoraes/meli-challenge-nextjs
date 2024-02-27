@@ -1,7 +1,10 @@
 import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import ProductDetails from "@/components/ProductDetails/ProductDetails";
-import { getProductDetails, getStaticProductDetails } from "@/services/items";
+import {
+  // getProductDetails,
+  getStaticProductDetails
+} from "@/services/items";
 import { ProductDetailsProps } from "@/components/ProductDetails/ProductDetails.types";
 import { Params } from "@/shared/types";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";

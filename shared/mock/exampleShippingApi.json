@@ -1,0 +1,75 @@
+{
+  "destination": {
+    "zip_code": "05145000",
+    "city": {
+      "id": "BR-SP-44",
+      "name": "São Paulo"
+    },
+    "state": {
+      "id": "BR-SP",
+      "name": "São Paulo"
+    },
+    "country": {
+      "id": "BR",
+      "name": "Brasil"
+    },
+    "extended_attributes": {
+      "address": "Avenida Raimundo Pereira de Magalhães",
+      "zip_code_type": {
+        "type": "LO",
+        "description": "Logradouro"
+      },
+      "city_type": "CI",
+      "city_name": "São Paulo",
+      "neighborhood": "Jardim Íris",
+      "status": "active"
+    }
+  },
+  "buyer": {
+    "id": 0,
+    "loyalty_level": 1,
+    "shipping_level": "1"
+  },
+  "options": [
+    {
+      "id": 3007594485,
+      "option_hash": "6f851ae66295f882e6295e464f3acebb",
+      "name": "Expresso",
+      "currency_id": "BRL",
+      "base_cost": 14,
+      "cost": 14,
+      "list_cost": 14,
+      "display": "recommended",
+      "shipping_method_id": 511948,
+      "shipping_method_type": "sedex",
+      "shipping_option_type": "address",
+      "estimated_delivery_time": {
+        "type": "known_frame",
+        "date": "2024-03-01T00:00:00-03:00",
+        "unit": "hour",
+        "offset": {
+          "date": "2024-03-06T00:00:00-03:00",
+          "shipping": 72
+        },
+        "time_frame": {
+          "from": null,
+          "to": null
+        },
+        "pay_before": "2024-02-28T00:00:00-03:00",
+        "shipping": 24,
+        "handling": 48,
+        "schedule": null
+      },
+      "discount": {
+        "promoted_amount": 0,
+        "rate": 0,
+        "type": "none",
+        "show_loyal_benefit": false
+      }
+    }
+  ],
+  "custom_message": {
+    "display_mode": null,
+    "reason": ""
+  }
+}

@@ -11,7 +11,7 @@ describe("ProductCard tests", () => {
     const encodedUrl = encodeURIComponent(searchResultItem.picture);
 
     const title = screen.getByText(/Sony Playstation 3/i);
-    const price = screen.getByText(/255612/i);
+    const price = screen.getByText(/255.612/i);
     const decimals = screen.getByTestId("decimals");
     const image = screen.getByAltText(/Sony Playstation 3/i);
     const freeShipping = screen.getByAltText(/Frete grátis/i);

@@ -1,4 +1,3 @@
-import axios from "axios";
 import { NextApiRequest, NextApiResponse } from "next";
 
 type Filter = {
@@ -32,11 +31,12 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     } = request;
 
     try {
-      const searchResponse = await axios.get(
+      const searchResponse = await fetch(
         `https://api.mercadolibre.com/sites/MLA/search?q=${q}`
       );
+      const searchResponseData = await searchResponse.json();
 
-      const { results, filters } = searchResponse.data;
+      const { results, filters } = searchResponseData;
       const category = filters.find((x: Filter) => x.id === "category");
 
       let categories;
@@ -46,10 +46,12 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
         categories = values.path_from_root.map((x: Category) => x.name);
       } else {
         if (extraInfo === "true") {
-          const categoriesResponse = await axios.get(
+          const categoriesResponse = await fetch(
             `https://api.mercadolibre.com/categories/${results[0].category_id}`
           );
-          categories = categoriesResponse.data.path_from_root.map(
+          const categoriesResponseData = await categoriesResponse.json();
+
+          categories = categoriesResponseData.path_from_root.map(
             (x: Category) => x.name
           );
         }
@@ -78,9 +80,11 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
 
       if (extraInfo === "true") {
         for (const item of items) {
-          const { data: itemResponseData } = await axios.get(
+          const itemResponse = await fetch(
             `https://api.mercadolibre.com/items/${item.id}`
           );
+          const itemResponseData = await itemResponse.json();
+
           item.state = itemResponseData.seller_address.state.name;
         }
       }

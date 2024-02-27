@@ -3,7 +3,9 @@ type Category = {
 };
 
 type GetStaticProductDetailsResponse = {
-  item?: {};
+  item?: {
+    id: string;
+  };
   error?: string;
 };
 
@@ -18,10 +20,8 @@ export const getProductDetails = async (id: string) => {
 
 export const getSearchResults = async (
   query: string | string[] | undefined,
-  extraInfo: string | string[] | undefined
+  extraInfo?: string | string[] | undefined
 ) => {
-  console.log(query);
-
   const response = await fetch(
     `http://localhost:3000/api/items?q=${query}&extraInfo=${extraInfo}`
   );
@@ -87,4 +87,12 @@ export const getStaticProductDetails = async (
   } catch (error) {
     return { error: "Server Error" };
   }
+};
+
+export const getExampleClientSide = async () => {
+  const stateResponse = await fetch(
+    "https://api.mercadolibre.com/items/MLB2997181655/shipping_options?zip_code=05145000"
+  );
+  const data = await stateResponse.json();
+  return data.options[0].cost;
 };

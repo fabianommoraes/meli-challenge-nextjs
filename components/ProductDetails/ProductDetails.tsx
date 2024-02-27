@@ -2,6 +2,8 @@ import Image from "next/image";
 import styles from "./ProductDetails.module.sass";
 import Button from "../Button/Button";
 import { ProductDetailsProps } from "./ProductDetails.types";
+import { formatCurrencyToArg } from "../../shared/utils";
+// import Example from "../Example/Example";
 
 const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
   const description = productDetails.item.description.replace(/\n/g, "<br />");
@@ -31,7 +33,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             <h1 aria-hidden>{productDetails.item.title}</h1>
             <div className={styles.priceContainer}>
               <span className={styles.price}>
-                $ {productDetails.item.price.amount}
+                $ {formatCurrencyToArg(productDetails.item.price.amount)}
               </span>{" "}
               <span
                 data-testid={"decimals"}
@@ -41,6 +43,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
                 {productDetails.item.price.decimals}
               </span>
             </div>
+            {/* <Example /> */}
             <Button onClick={onClickHandler}>Comprar</Button>
           </div>
         </div>
