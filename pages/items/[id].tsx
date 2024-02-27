@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import ProductDetails from "@/components/ProductDetails/ProductDetails";
-import { getProductDetails } from "@/services/items";
+import { getStaticProductDetails } from "@/services/items";
 import { ProductDetailsProps } from "@/components/ProductDetails/ProductDetails.types";
 import { Params } from "@/shared/types";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
@@ -22,12 +22,12 @@ const ProductDetailsPage = ({ productDetails }: ProductDetailsProps) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const params = context.params as Params;
 
-  const response = await getProductDetails(params.id);
+  const response = await getStaticProductDetails(params.id);
 
-  if (response && response.status === 200) {
+  if (response) {
     return {
       props: {
-        productDetails: response.data
+        productDetails: response
       },
       revalidate: 60
     };
