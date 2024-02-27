@@ -39,30 +39,30 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  if (process.env.APP_ENV === "cy") {
-    return {
-      paths: [],
-      fallback: "blocking"
-    };
-  } else {
-    return {
-      paths: [
-        {
-          params: { id: "MLA1362438311" }
-        },
-        {
-          params: { id: "MLA1437406762" }
-        },
-        {
-          params: { id: "MLA903665569" }
-        },
-        {
-          params: { id: "MLA1130295049" }
-        }
-      ],
-      fallback: "blocking"
-    };
-  }
+  // if (process.env.APP_ENV === "cy") {
+  //   return {
+  //     paths: [],
+  //     fallback: "blocking"
+  //   };
+  // } else {
+  return {
+    paths: [
+      {
+        params: { id: "MLA1362438311" }
+      },
+      {
+        params: { id: "MLA1437406762" }
+      },
+      {
+        params: { id: "MLA903665569" }
+      },
+      {
+        params: { id: "MLA1130295049" }
+      }
+    ],
+    fallback: "blocking"
+  };
+  // }
 };
 
 export default ProductDetailsPage;
