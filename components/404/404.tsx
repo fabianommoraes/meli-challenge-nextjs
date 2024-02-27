@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./404.module.sass";
 
 const Error404 = () => {
@@ -106,6 +107,9 @@ const Error404 = () => {
       </svg>
 
       <h2 className={styles.message}>Parece que esta página no existe</h2>
+      <Link className={styles.link} href={"/"}>
+        Ir a la página principal
+      </Link>
     </div>
   );
 };

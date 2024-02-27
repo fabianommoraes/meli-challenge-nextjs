@@ -11,7 +11,11 @@ const ProductCard = ({ item }: ProductCardProps) => {
         <div>
           <div className={styles.price}>
             <span>$ {item.price.amount}</span>
-            <span data-testid="decimals" className={styles.decimals}>
+            <span
+              data-testid="decimals"
+              className={styles.decimals}
+              aria-hidden
+            >
               {item.price.decimals}
             </span>
             {item.free_shipping ? (
@@ -19,11 +23,13 @@ const ProductCard = ({ item }: ProductCardProps) => {
                 src="/ic_shipping.png"
                 width={18}
                 height={18}
-                alt="free shipping"
+                alt="Frete grátis"
               />
             ) : null}
           </div>
-          <h2 className={styles.title}> {item.title}</h2>
+          <h2 className={styles.title} aria-hidden>
+            {item.title}
+          </h2>
         </div>
       </div>
 

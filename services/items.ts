@@ -2,6 +2,11 @@ type Category = {
   name: string;
 };
 
+type GetStaticProductDetailsResponse = {
+  item?: {};
+  error?: string;
+};
+
 export const getProductDetails = async (id: string) => {
   const response = await fetch(`http://localhost:3000/api/items/${id}`);
   const data = await response.json();
@@ -15,6 +20,8 @@ export const getSearchResults = async (
   query: string | string[] | undefined,
   extraInfo: string | string[] | undefined
 ) => {
+  console.log(query);
+
   const response = await fetch(
     `http://localhost:3000/api/items?q=${query}&extraInfo=${extraInfo}`
   );
@@ -27,7 +34,7 @@ export const getSearchResults = async (
 
 export const getStaticProductDetails = async (
   id: string | string[] | undefined
-) => {
+): Promise<GetStaticProductDetailsResponse> => {
   try {
     const itemResponse = await fetch(
       `https://api.mercadolibre.com/items/${id}`
@@ -78,6 +85,6 @@ export const getStaticProductDetails = async (
 
     return itemDetailResponse;
   } catch (error) {
-    // error
+    return { error: "Server Error" };
   }
 };

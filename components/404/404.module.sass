@@ -1,3 +1,6 @@
+@use "tokens"
+
+    
 .background 
     position: fixed
     left: 0
@@ -13,6 +16,10 @@
 
 .message
     margin: 32px
-    font-weight: 400
-    font-size: 18px
+    font-size: tokens.$font-size-medium
     text-align: center
+    
+.link
+    font-size: tokens.$font-size-small
+    color: tokens.$grayscale-medium
+    text-decoration: underline

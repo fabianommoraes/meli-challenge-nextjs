@@ -1,11 +1,8 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import Head from "next/head";
 import ProductDetails from "@/components/ProductDetails/ProductDetails";
-import { getStaticProductDetails } from "@/services/items";
-import {
-  ProductDetailsProps,
-  ProductDetails as ProductDetailsType
-} from "@/components/ProductDetails/ProductDetails.types";
+import { getProductDetails, getStaticProductDetails } from "@/services/items";
+import { ProductDetailsProps } from "@/components/ProductDetails/ProductDetails.types";
 import { Params } from "@/shared/types";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
@@ -25,12 +22,12 @@ const ProductDetailsPage = ({ productDetails }: ProductDetailsProps) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const params = context.params as Params;
 
-  const response = await getStaticProductDetails(params.id);
+  const result = await getStaticProductDetails(params.id);
 
-  if (response && response.item) {
+  if (result.item) {
     return {
       props: {
-        productDetails: response
+        productDetails: result
       },
       revalidate: 60
     };
@@ -60,5 +57,23 @@ export const getStaticPaths = async () => {
     fallback: "blocking"
   };
 };
+
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const params = context.params as Params;
+
+//   const response = await getProductDetails(params.id);
+
+//   if (response.status === 200) {
+//     return {
+//       props: {
+//         productDetails: response.data
+//       }
+//     };
+//   } else {
+//     return {
+//       notFound: true
+//     };
+//   }
+// };
 
 export default ProductDetailsPage;

@@ -8,7 +8,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.grid}>
         <div className={styles.content}>
-          <Link className={styles.link} href={"/"}>
+          <Link className={styles.link} href={"/"} aria-label="Página Inicial">
             <Image
               src="/logo_ml.png"
               alt="Logo Mercado Libre"

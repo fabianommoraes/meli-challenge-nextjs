@@ -21,18 +21,23 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             width={680}
             height={680}
             priority
+            aria-hidden
           />
           <div className={styles.details}>
             <div
               data-testid={"soldQuantity"}
               className={styles.buyers}
             >{`${productDetails.item.condition} - ${productDetails.item.sold_quantity} vendidos`}</div>
-            <h1>{productDetails.item.title}</h1>
+            <h1 aria-hidden>{productDetails.item.title}</h1>
             <div className={styles.priceContainer}>
               <span className={styles.price}>
                 $ {productDetails.item.price.amount}
               </span>{" "}
-              <span data-testid={"decimals"} className={styles.decimal}>
+              <span
+                data-testid={"decimals"}
+                className={styles.decimal}
+                aria-hidden
+              >
                 {productDetails.item.price.decimals}
               </span>
             </div>

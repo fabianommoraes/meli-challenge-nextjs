@@ -23,7 +23,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const response = await getSearchResults(search, extraInfo);
 
-  if (response.status === 200) {
+  if (search && response.status === 200) {
     return {
       props: {
         searchResults: response.data

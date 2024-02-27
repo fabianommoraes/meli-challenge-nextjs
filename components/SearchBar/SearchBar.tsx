@@ -22,7 +22,7 @@ const SearchBar = () => {
         placeholder="nunca dejes de buscar"
         ref={inputRef}
         name="searchInput"
-        aria-label="searchInput"
+        aria-label="Digite o que você deseja encontrar"
       />
       <button type="submit" onClick={onClickHandler}>
         <Image src="/ic_search.png" width={18} height={18} alt="buscar" />

@@ -24,10 +24,16 @@
     grid-column: 2
     font-size: tokens.$font-size-small
     color: tokens.$grayscale-medium
+    list-style-type: none
+    display: flex
+    flex-direction: row
 
 .focusable
     outline: none
     border: 1px solid transparent
+
+.margin
+    margin: tokens.$space-zero tokens.$space-small
 
     &:focus
         border: tokens.$outline-border

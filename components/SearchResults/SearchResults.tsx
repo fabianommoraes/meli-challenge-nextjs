@@ -6,14 +6,14 @@ const SearchResults = ({ searchResultItems }: SearchResultsProps) => {
   return (
     <div className={styles.searchResults}>
       <div className={styles.grid}>
-        <div className={styles.content}>
+        <ol className={styles.content}>
           {searchResultItems.map((item, i) => (
-            <div key={item.id}>
+            <li key={item.id}>
               <ProductCard item={item} key={item.id} />
               {i !== searchResultItems.length - 1 ? <hr /> : null}
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </div>
   );
