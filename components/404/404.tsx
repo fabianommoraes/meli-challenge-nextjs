@@ -9,6 +9,7 @@ const Error404 = () => {
         height="154"
         viewBox="0 0 251 154"
         data-reactid="8"
+        aria-label="notFoundIcon"
       >
         <g fill="none" fillRule="evenodd" data-reactid="9">
           <path

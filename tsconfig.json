@@ -25,7 +25,8 @@
     "**/*.tsx",
     "shared/withRedux.js",
     "shared/test-utils.jsx",
-    "components/ListOfMonsters/RadioGroup.js"
+    "components/ListOfMonsters/RadioGroup.js",
+    "cypress/e2e/melichallenge.cy.js"
   ],
   "exclude": [
     "node_modules",

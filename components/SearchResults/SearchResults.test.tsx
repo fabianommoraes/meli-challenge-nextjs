@@ -5,10 +5,10 @@ import SearchResults from "./SearchResults";
 import searchResultItems from "../../shared/mock/searchResultItems.json";
 
 describe("SearchResults tests", () => {
-  it("should render the attribute name and stat bar", () => {
+  it("should render all the items search", () => {
     render(<SearchResults searchResultItems={searchResultItems} />);
-
-    const winner = screen.getByText("Dead Unicorn wins!");
-    expect(winner).toBeInTheDocument();
+    const length = searchResultItems.length;
+    const items = screen.getAllByRole("link");
+    expect(items).toHaveLength(length);
   });
 });

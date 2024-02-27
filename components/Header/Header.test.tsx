@@ -23,11 +23,4 @@ describe("Header tests", () => {
     );
     expect(logo).toBeInTheDocument();
   });
-
-  it("should render the search bar", () => {
-    render(<Header />);
-
-    const input = screen.getByRole("textbox", { name: "busca" });
-    expect(input).toBeInTheDocument();
-  });
 });

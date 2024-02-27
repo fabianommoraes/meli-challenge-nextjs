@@ -19,7 +19,7 @@ const SearchBar = () => {
   return (
     <form className={styles.searchBar}>
       <input
-        placeholder="busca"
+        placeholder="nunca dejes de buscar"
         ref={inputRef}
         name="searchInput"
         aria-label="searchInput"
