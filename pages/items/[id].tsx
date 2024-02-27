@@ -2,7 +2,10 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import ProductDetails from "@/components/ProductDetails/ProductDetails";
 import { getStaticProductDetails } from "@/services/items";
-import { ProductDetailsProps } from "@/components/ProductDetails/ProductDetails.types";
+import {
+  ProductDetailsProps,
+  ProductDetails as ProductDetailsType
+} from "@/components/ProductDetails/ProductDetails.types";
 import { Params } from "@/shared/types";
 import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
@@ -24,7 +27,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const response = await getStaticProductDetails(params.id);
 
-  if (response) {
+  if (response.item) {
     return {
       props: {
         productDetails: response
@@ -39,12 +42,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  // if (process.env.APP_ENV === "cy") {
-  //   return {
-  //     paths: [],
-  //     fallback: "blocking"
-  //   };
-  // } else {
   return {
     paths: [
       {
@@ -62,7 +59,6 @@ export const getStaticPaths = async () => {
     ],
     fallback: "blocking"
   };
-  // }
 };
 
 export default ProductDetailsPage;

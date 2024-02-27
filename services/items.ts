@@ -1,6 +1,6 @@
-// @ts-nocheck
-
-import axios from "axios";
+type Category = {
+  name: string;
+};
 
 export const getProductDetails = async (id: string) => {
   const response = await fetch(`http://localhost:3000/api/items/${id}`);
@@ -25,33 +25,34 @@ export const getSearchResults = async (
   };
 };
 
-export const getStaticProductDetails = async (id: string) => {
+export const getStaticProductDetails = async (
+  id: string | string[] | undefined
+) => {
   try {
-    const { data: itemResponseData } = await axios.get(
+    const itemResponse = await fetch(
       `https://api.mercadolibre.com/items/${id}`
     );
+    const itemResponseData = await itemResponse.json();
+
+    const descriptionResponse = await fetch(
+      `https://api.mercadolibre.com/items/${id}/description`
+    );
+    const descriptionResponseData = await descriptionResponse.json();
 
     const categoryId = itemResponseData.category_id;
 
-    const { data: descriptionResponseData } = await axios.get(
-      `https://api.mercadolibre.com/items/${id}/description`
-    );
-
-    let categories;
-
-    const { data: categoriesResponse } = await axios.get(
+    const categoriesResponse = await fetch(
       `https://api.mercadolibre.com/categories/${categoryId}`
     );
+    const categoriesResponseData = await categoriesResponse.json();
 
-    categories = categoriesResponse.path_from_root.map((x: Category) => x.name);
+    const categories = categoriesResponseData.path_from_root.map(
+      (x: Category) => x.name
+    );
 
     const [amount, decimals] = itemResponseData.price.toString().split(".");
 
-    const formattedDecimals = Boolean(decimals)
-      ? parseInt(decimals) < 10
-        ? `0${decimals}`
-        : decimals
-      : "00";
+    const formattedDecimals = Boolean(decimals) ? decimals : "00";
 
     const itemDetailResponse = {
       author: {
@@ -77,6 +78,6 @@ export const getStaticProductDetails = async (id: string) => {
 
     return itemDetailResponse;
   } catch (error) {
-    return { error: "Server error" };
+    throw Error();
   }
 };
