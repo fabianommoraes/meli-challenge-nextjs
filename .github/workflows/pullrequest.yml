@@ -33,7 +33,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-          build: npm run build
+          build: npm run build:cy
           start: npm start     
           wait-on: "http://localhost:3000"  
   deploy:
