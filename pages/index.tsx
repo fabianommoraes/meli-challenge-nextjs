@@ -1,10 +1,4 @@
 import Head from "next/head";
-import Header from "@/components/Header/Header";
-import ProductCard from "@/components/ProductCard/ProductCard";
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
-import ProductDetails from "@/components/ProductDetails/ProductDetails";
-
-const array = [1, 2, 3];
 
 export default function Home() {
   return (
