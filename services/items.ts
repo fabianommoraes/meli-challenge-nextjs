@@ -78,6 +78,6 @@ export const getStaticProductDetails = async (
 
     return itemDetailResponse;
   } catch (error) {
-    throw Error();
+    // error
   }
 };

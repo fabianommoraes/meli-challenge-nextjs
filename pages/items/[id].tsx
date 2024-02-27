@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const response = await getStaticProductDetails(params.id);
 
-  if (response.item) {
+  if (response && response.item) {
     return {
       props: {
         productDetails: response
