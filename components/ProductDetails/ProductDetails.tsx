@@ -34,7 +34,7 @@ const ProductDetails = ({ productDetails }: ProductDetailsProps) => {
             <div className={styles.priceContainer}>
               <span className={styles.price}>
                 $ {formatCurrencyToArg(productDetails.item.price.amount)}
-              </span>{" "}
+              </span>
               <span
                 data-testid={"decimals"}
                 className={styles.decimal}
