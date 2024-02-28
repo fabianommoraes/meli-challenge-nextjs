@@ -68,6 +68,7 @@ Foi adicionado a chamada a API de categorias do Mercado Libre. Isto aumenta um p
 
 Para visualizar o ISR em ação, utilize o build em produção.
 Os seguintes IDs são gerados em tempo de build do projeto: MLA1362438311, MLA1437406762, MLA903665569, MLA1130295049
+Fazendo uma busca com a palavra `playstation`, os IDs acima serão exibidos.
 
 ![Captura de tela de 2024-02-27 21-14-07](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/1beb8217-cb35-49ca-a628-3afd5d138186)
 
