@@ -9,8 +9,10 @@ type GetStaticProductDetailsResponse = {
   error?: string;
 };
 
+const port = process.env.BACKEND === "node" ? "3001" : "3000";
+
 export const getProductDetails = async (id: string) => {
-  const response = await fetch(`http://localhost:3000/api/items/${id}`);
+  const response = await fetch(`http://localhost:${port}/api/items/${id}`);
   const data = await response.json();
   return {
     status: response.status,
@@ -23,7 +25,7 @@ export const getSearchResults = async (
   extraInfo?: string | string[] | undefined
 ) => {
   const response = await fetch(
-    `http://localhost:3000/api/items?q=${query}&extraInfo=${extraInfo}`
+    `http://localhost:${port}/api/items?q=${query}&extraInfo=${extraInfo}`
   );
   const data = await response.json();
   return {
