@@ -24,7 +24,13 @@ Para executar o projeto do Storybook:
 
 ### Este repositório também já contempla o back-end da aplicação, não sendo necessário rodar dois projetos.
 Porém para fins de completude do Desafio Técnico, o seguinte repositório com um servidor Node/Express está disponível no seguinte link: https://github.com/fabianommoraes/meli-challenge-node-express
+Para fazer o front-end consumir as APIs do Node, mude a arquivo `.env` deste projeto.
 
+de `BACKEND=next` para `BACKEND=node`
+
+Execute o projeto em Node e depois o Next
+
+(O código do backend do Next e do Node são praticamente os mesmos.)
 
 ## Observações técnicas
 
