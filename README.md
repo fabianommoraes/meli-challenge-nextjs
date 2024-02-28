@@ -67,21 +67,23 @@ Foi adicionado a chamada a API de categorias do Mercado Libre. Isto aumenta um p
 ### ISR do Next.js
 
 Para visualizar o ISR em ação, utilize o build em produção.
+
 Os seguintes IDs são gerados em tempo de build do projeto: MLA1362438311, MLA1437406762, MLA903665569, MLA1130295049.
 
 Fazendo uma busca com a palavra `playstation`, os IDs acima serão exibidos.
 
 ![Captura de tela de 2024-02-27 21-14-07](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/1beb8217-cb35-49ca-a628-3afd5d138186)
 
-### Resultados do Lighthouse
+### Resultados do Lighthouse (build de produção)
+
 #### Página de busca (Server Side Rendering)
-![Captura de tela de 2024-02-27 21-18-43](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/275cac70-7bee-41e5-81d7-d250dd1271f3)
+![Captura de tela de 2024-02-28 03-08-55](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/fa69435b-cd71-4aa2-bd1f-fb7d986f3a4c)
 
 #### Detalhes do Produto (Server Side Rendering)
-![Captura de tela de 2024-02-27 21-17-04](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/ae15a8b7-09c2-45e2-b531-1a091b2ecc34)
+![Captura de tela de 2024-02-28 03-09-49](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/67560eb5-e9df-4436-af05-8b661c780070)
 
 #### Detalhes do Produto (Incremental Static Regeneration) - Disponível para 4 IDs
-![Captura de tela de 2024-02-27 21-15-03](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/f0b31390-f66d-468f-b77b-e071a0d70fc4)
+![Captura de tela de 2024-02-28 03-09-21](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/d8553dc3-2a30-4e13-9cd1-d309df4bd44d)
 
 
 ## Testes de Unidade
