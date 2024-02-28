@@ -39,7 +39,7 @@ Execute o projeto em Node e depois o Next
 
 Existe uma discrepância entre os desenhos e a especificação técnica das APIs.
 No desenho dos resultados da busca, é possível ver o local de origem do produto (por exemplo: Capital Federal).
-Porém o documento da API não comtempla o campo "state".
+Porém o documento da API não contempla o campo "state".
 
 Inicialmente ao exibir uma busca, a seguinte tela será renderizada:
 
