@@ -58,6 +58,8 @@ Foi adicionado a chamada a API de categorias do Mercado Libre. Isto aumenta um p
 Para visualizar o ISR em ação, utilize o build em produção.
 Os seguintes IDs são gerados em tempo de build do projeto: MLA1362438311, MLA1437406762, MLA903665569, MLA1130295049
 
+![Captura de tela de 2024-02-27 21-14-07](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/1beb8217-cb35-49ca-a628-3afd5d138186)
+
 ### Resultados do Lighthouse
 #### Página de busca (Server Side Rendering)
 ![Captura de tela de 2024-02-27 21-18-43](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/275cac70-7bee-41e5-81d7-d250dd1271f3)
@@ -67,6 +69,27 @@ Os seguintes IDs são gerados em tempo de build do projeto: MLA1362438311, MLA14
 
 #### Detalhes do Produto (Incremental Static Regeneration) - Disponível para 4 IDs
 ![Captura de tela de 2024-02-27 21-15-03](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/f0b31390-f66d-468f-b77b-e071a0d70fc4)
+
+
+## Testes de Unidade
+Para rodar os testes de unidade, utilize o seguinte comando:
+
+`npm run test`
+
+![Captura de tela de 2024-02-27 21-25-53](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/fb0c1dd5-10a9-4602-bf56-6e2982c2b441)
+
+
+## Testes E2E
+Para rodar os testes de unidade, digite o seguinte comando:
+
+`npx cypress open`
+
+![Captura de tela de 2024-02-27 21-39-18](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/448a430b-ec89-4cd8-8c16-3eceb0c3798b)
+
+## Acessibilidade e Usabilidade
+É possível "realizar uma compra" utilizando a navegação por tab. Foram considerados alguns aspectos de acessibilidade para funcionar melhor com leitores de tela.
+
+![Captura de tela de 2024-02-27 21-44-06](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/5a95b26e-0f55-4f94-b034-7dd45735d719)
 
 
 
