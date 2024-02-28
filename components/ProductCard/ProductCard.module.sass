@@ -15,8 +15,11 @@
 
     > img 
       margin-right: tokens.$space-medium
-      display: flex
       border-radius: 4px
+      width: 100%
+      height: auto
+      max-width: 180px
+      max-height: 180px
     
 .description 
   display: flex
@@ -44,6 +47,11 @@
   color: tokens.$grayscale-medium
   text-align: right
   margin-top: tokens.$space-large
+  margin-right: tokens.$space-small
+
+.title
+  font-size: tokens.$font-size-small
+  font-weight: 400
 
 @media (min-width: tokens.$layout-breakpoint-medium)
   .productCard
