@@ -24,7 +24,8 @@ Para executar o projeto do Storybook:
 
 ### Este repositório também já contempla o back-end da aplicação, não sendo necessário rodar dois projetos.
 Porém para fins de completude do Desafio Técnico, o seguinte repositório com um servidor Node/Express está disponível no seguinte link: https://github.com/fabianommoraes/meli-challenge-node-express
-Para fazer o front-end consumir as APIs do Node, mude a arquivo `.env` deste projeto.
+
+Para fazer o front-end consumir as APIs do Node, mude a arquivo `.env` deste projeto:
 
 de `BACKEND=next` para `BACKEND=node`
 
@@ -66,7 +67,9 @@ Foi adicionado a chamada a API de categorias do Mercado Libre. Isto aumenta um p
 ### ISR do Next.js
 
 Para visualizar o ISR em ação, utilize o build em produção.
-Os seguintes IDs são gerados em tempo de build do projeto: MLA1362438311, MLA1437406762, MLA903665569, MLA1130295049
+Os seguintes IDs são gerados em tempo de build do projeto: MLA1362438311, MLA1437406762, MLA903665569, MLA1130295049.
+
+Fazendo uma busca com a palavra `playstation`, os IDs acima serão exibidos.
 
 ![Captura de tela de 2024-02-27 21-14-07](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/1beb8217-cb35-49ca-a628-3afd5d138186)
 
