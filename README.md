@@ -18,6 +18,10 @@ Para executar localmente o projeto otimizado:
 
 `npm start`
 
+Para executar o projeto do Storybook:
+
+`npm run storybook`
+
 ### Este repositório também já contempla o back-end da aplicação, não sendo necessário rodar dois projetos.
 Porém para fins de completude do Desafio Técnico, o seguinte repositório com um servidor Node/Express está disponível no seguinte link: https://github.com/fabianommoraes/meli-challenge-node-express
 
@@ -90,6 +94,16 @@ Para rodar os testes de unidade, digite o seguinte comando:
 É possível "realizar uma compra" utilizando a navegação por tab. Foram considerados alguns aspectos de acessibilidade para funcionar melhor com leitores de tela.
 
 ![Captura de tela de 2024-02-27 21-44-06](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/5a95b26e-0f55-4f94-b034-7dd45735d719)
+
+
+## SEO
+O Next.js possui Server Side Rendering e outras features que facilitam o SEO.
+Todas as páginas são renderizadas pelo lado de servidor e algumas `meta` tags foram populadas com informações do produto.
+
+## Storybook
+O projeto possui um Storybook para poder visualizar a sua biblioteca de componentes.
+![Captura de tela de 2024-02-27 21-48-55](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/be160e5c-c185-43b2-ab4d-c316151f15d5)
+
 
 
 
