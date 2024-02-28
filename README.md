@@ -111,5 +111,9 @@ O projeto possui um Storybook para poder visualizar a sua biblioteca de componen
 ![Captura de tela de 2024-02-27 21-48-55](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/be160e5c-c185-43b2-ab4d-c316151f15d5)
 
 
+## GitHub Actions
+O projeto possui um pequeno CI onde são verificados o Lint, Testes de Unidade e Testes e2e.
+
+![Captura de tela de 2024-02-27 22-13-15](https://github.com/fabianommoraes/meli-challenge-nextjs/assets/11391586/f71591df-b864-4cc8-88b8-88146600ca57)
 
 
