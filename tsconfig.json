@@ -34,6 +34,7 @@
     "cypress.config.ts",
     "**/*.cy.jsx",
     "/cypress.config.ts",
-    "./cypress.config.ts"
+    "./cypress.config.ts",
+    "commitlint.config.js"
   ]
 }
