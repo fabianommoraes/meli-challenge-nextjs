@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/fabianommoraes/meli-challenge-nextjs/compare/v1.1.0...v1.1.1) (2024-09-02)
+
+
+### Bug Fixes
+
+* test for minor ([2a71aca](https://github.com/fabianommoraes/meli-challenge-nextjs/commit/2a71acad575369ec63dbe5aaba1ea637d9ceb355))
+
 # [1.1.0](https://github.com/fabianommoraes/meli-challenge-nextjs/compare/v1.0.0...v1.1.0) (2024-09-02)
 
 
