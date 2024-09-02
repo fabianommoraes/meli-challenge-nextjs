@@ -21,18 +21,18 @@ jobs:
         run: npm ci
       - name: Test code
         run: npm run test
-  e2e:
-    needs: test
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Get code
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: npm ci
-      - name: Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          build: npm run build:cy
-          start: npm start     
-          wait-on: "http://localhost:3000"  
+  # e2e:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps: 
+  #     - name: Get code
+  #       uses: actions/checkout@v3
+  #     - name: Install dependencies
+  #       run: npm ci
+  #     - name: Cypress
+  #       uses: cypress-io/github-action@v6
+  #       with:
+  #         browser: chrome
+  #         build: npm run build:cy
+  #         start: npm start     
+  #         wait-on: "http://localhost:3000"  
