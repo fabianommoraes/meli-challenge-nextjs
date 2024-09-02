@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mercado Libreaaa</title>
+        <title>Mercado Libre Breaking Charge example</title>
         <meta
           name="description"
           content="Comprá productos con Envío Gratis en el día en Mercado Libre Argentina. Encontrá miles de marcas y productos a precios increíbles."
