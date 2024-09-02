@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/fabianommoraes/meli-challenge-nextjs/compare/v1.1.1...v1.2.0) (2024-09-02)
+
+
+### Features
+
+* feat test ([860a458](https://github.com/fabianommoraes/meli-challenge-nextjs/commit/860a4584f9314570387d5dafed2c7643a200f093))
+
 ## [1.1.1](https://github.com/fabianommoraes/meli-challenge-nextjs/compare/v1.1.0...v1.1.1) (2024-09-02)
 
 
