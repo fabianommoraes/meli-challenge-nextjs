@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/fabianommoraes/meli-challenge-nextjs/compare/v1.2.0...v2.0.0) (2024-09-02)
+
+
+### Features
+
+* bc test ([c97d450](https://github.com/fabianommoraes/meli-challenge-nextjs/commit/c97d450c2c8e69306e087e306a5892c9fdebf26b))
+
+
+### BREAKING CHANGES
+
+* test
+
 # [1.2.0](https://github.com/fabianommoraes/meli-challenge-nextjs/compare/v1.1.1...v1.2.0) (2024-09-02)
 
 
