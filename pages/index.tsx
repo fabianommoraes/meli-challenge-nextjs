@@ -1,7 +1,5 @@
 import Head from "next/head";
 
-// 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
-
 export default function Home() {
   return (
     <>
